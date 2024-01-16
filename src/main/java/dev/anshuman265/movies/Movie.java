@@ -1,6 +1,5 @@
 package dev.anshuman265.movies;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,8 +22,18 @@ public class Movie {
     private String releaseDate;
     private String trailerLink;
     private String poster;
-    private List<String> genres;
     private List<String> backdrops;
+    private List<String> genres;
     @DocumentReference
-    private List<Review> reviewIds;
+    private List<dev.anshuman265.movies.Review> reviews;
+
+    public Movie(String imdbId, String title, String releaseDate, String trailerLink, String poster, List<String> backdrops, List<String> genres) {
+        this.imdbId = imdbId;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.trailerLink = trailerLink;
+        this.poster = poster;
+        this.backdrops = backdrops;
+        this.genres = genres;
+    }
 }
